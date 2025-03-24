@@ -1,0 +1,20 @@
+# Project-specific history logs
+export MANUAL_HISTORY_FILE=~/Desktop/IT-AZ/project_history_manual.log
+export AUTO_HISTORY_FILE=~/Desktop/IT-AZ/project_history_auto_master.log
+
+function savehistory() {
+    echo "======== MANUAL SAVE $(date) ========" >> "$MANUAL_HISTORY_FILE"
+    history >> "$MANUAL_HISTORY_FILE"
+    echo -e "\e[32m✔ History manually saved to $MANUAL_HISTORY_FILE\e[0m"
+}
+
+function autosave_on_exit() {
+    echo "======== AUTO SAVE $(date) ========" >> "$AUTO_HISTORY_FILE"
+    history >> "$AUTO_HISTORY_FILE"
+    echo -e "\e[34m💾 Auto history saved to $AUTO_HISTORY_FILE\e[0m"
+}
+
+trap autosave_on_exit EXIT
+
+# Startup message
+echo -e "\e[36m🛡️  Auto Save System ACTIVE for IT-AZ Repo\e[0m"
