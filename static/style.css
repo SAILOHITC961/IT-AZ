@@ -1,0 +1,48 @@
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar .btn.active {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+/* Filters */
+.filters select,
+.filters input {
+    min-width: 140px;
+}
+
+/* Status badge */
+.badge-status {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.badge-green { background-color: #28a745; }
+.badge-red { background-color: #dc3545; }
+.badge-gray { background-color: #6c757d; }
+
+/* Chart placeholders */
+.chart-placeholder {
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-bottom: 20px;
+    }
+    .main-content {
+        padding: 0 10px;
+    }
+}

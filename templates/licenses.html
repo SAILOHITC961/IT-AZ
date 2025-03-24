@@ -1,0 +1,41 @@
+<!-- templates/licenses.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4 text-center fw-bold">🔑 Software Licenses</h1>
+
+    <!-- Add New License Button -->
+    <div class="mb-4 text-end">
+        <a href="#" class="btn btn-success shadow-sm">➕ Add New License</a>
+    </div>
+
+    <!-- Licenses Table -->
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered shadow rounded">
+            <thead class="table-primary">
+                <tr>
+                    <th>License ID</th>
+                    <th>Software Name</th>
+                    <th>License Key</th>
+                    <th>Expiration Date</th>
+                    <th>Assigned To</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row -->
+                <tr>
+                    <td>LIC-1001</td>
+                    <td>Microsoft 365</td>
+                    <td>XXXX-XXXX-XXXX-XXXX</td>
+                    <td><span class="text-danger fw-bold">2025-04-30</span></td>
+                    <td>Jane Smith</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning me-1">✏️ Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">🗑️ Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
