@@ -1852,3 +1852,432 @@
   406  ls
   407  nano licenses.html
   408  savehistory
+======== MANUAL SAVE Mon Mar 24 23:16:20 IST 2025 ========
+    1  ls
+    2  cd GIT
+    3  ls
+    4  cd..
+    5  cd ..
+    6  pwd
+    7  cd /c/Users/sailo/GIT
+    8  pwd
+    9  ls
+   10  ls -l
+   11  ls
+   12  cd ..
+   13  pwd
+   14  cd /c/Users/sailo/JJB
+   15  ls
+   16  git init
+   17  ls
+   18  git add
+   19  git add .
+   20  git status
+   21  ls
+   22  bash script2.sh
+   23  vm cond.sh
+   24  vim cond.sh
+   25  bash cond.sh
+   26  vim cond.sh
+   27  bash cond.sh
+   28  pwd
+   29  ls
+   30  git status
+   31  git add .
+   32  vim cond.sh
+   33  vim g1.sh
+   34  git add .
+   35  bash g1.sh
+   36  sudosu
+   37  pwd
+   38  cd Desktop
+   39  pwd
+   40  ls
+   41  cd flask_project
+   42  python -m venv venv
+   43  source venv/Scripts/activate
+   44  python -m venv venv
+   45  python --version
+   46  python --version
+   47  pwd
+   48  [200~python --version
+   49  python --version
+   50  pwd
+   51  ls
+   52  cd Desktop
+   53  pwd
+   54  ls
+   55  cd flask_project
+   56  python --version
+   57  python --version
+   58  py --version
+   59  python --version
+   60  pwd
+   61  ls
+   62  cd Desktop
+   63  ls
+   64  cd flask_project
+   65  pwd
+   66  python -m venv venv
+   67  source venv/Scripts/activate
+   68  pip install flask flask_sqlalchemy psycopg2-binary
+   69  touch app.py models.py
+   70  mkdir templates static
+   71  flask run
+   72  flask run
+   73  flask run
+   74  flask run
+   75  python
+   76  flask run
+   77  run flask
+   78  pwd
+   79  ls
+   80  cd Desktop
+   81  ls
+   82  cd flask_project
+   83  flask run
+   84  run flask
+   85  venv\Scripts\activate
+   86  pwd
+   87  venv\Scripts\activate
+   88  pip list | findstr Flask
+   89  flask run
+   90  venv\Scripts\activate
+   91  pwd
+   92  cd Desktop
+   93  cd flask_project
+   94  ls
+   95  source venv/Scripts/activate
+   96  flask run
+   97  flask run
+   98  pip install flask flask-sqlalchemy psycopg2
+   99  psql --version
+  100  psql --version
+  101  psql --version
+  102  nano /.bashrc
+  103  pwd
+  104  cd Desktop
+  105  cd flask_project
+  106  ls
+  107  source venv/Scripts/activate
+  108  pip install psycopg2
+  109  flask shell
+  110  python
+  111  $ source venv/Scripts/activate
+  112  source venv/Scripts/activate
+  113  pip install psycopg2
+  114  from app import db
+  115  db.create_all() exit()
+  116  from app import db
+  117  python
+  118  python
+  119  psql -U postgres
+  120  psql -U postgres -d flask_db
+  121  source venv/Scripts/activate
+  122  flask shell
+  123  psql -U postgres -d flask_db
+  124  pwd
+  125  cd Desktop
+  126  cd flask_project
+  127  ls
+  128  source venv/Scripts/activate
+  129  flask shell
+  130  psql -U postgres -d flask_db
+  131  pwd
+  132  cd Desktop
+  133  cd flask_project
+  134  source venv/Scripts/ativate
+  135  source venv/Scripts/activate
+  136  flask shell
+  137  psql -U postgres -d flask_db
+  138  flask shell
+  139  psql -U postgres -d flask_db
+  140  source venv/Scripts/activate
+  141  python app.py
+  142  pwd
+  143  touch extensions.py
+  144  from flask_sqlalchemy import
+  145  python
+  146  pwd
+  147  cd Desktop
+  148  cd flask_project
+  149  source venv/Scripts/activate
+  150  python app.py
+  151  cd Desktop
+  152  cd flask_project
+  153  source venv/Scripts/activate
+  154  flask run
+  155  pwd
+  156  cd Desktop
+  157  cd flask_project
+  158  source venv/Scripts/activate
+  159  flask run
+  160  python create_tables.py
+  161  python create_tables.py
+  162  flask run
+  163  pwd
+  164  cd Desktop
+  165  cd flask_project
+  166  flask run
+  167  run flask
+  168  pwd
+  169  venv\Scripts\activate
+  170  venv\Scripts\activate
+  171  pwd
+  172  cd Desktop
+  173  cd flask_project
+  174  ls
+  175  venv\scripts\activate
+  176  venv\Scripts\activate
+  177  source venv/Scripts/activate
+  178  flask run
+  179  pwd
+  180  cd Desktop
+  181  cd flask_project
+  182  source venv/Script/activate
+  183  source venv/Scripts/activate
+  184  flask run
+  185  pip install python-dotenv
+  186  pwd
+  187  git remote add azure https://flaskinventory-lohit-345-f0hph5gph4e4fehb.scm.northeurope-01.azurewebsites.net:443/flaskinventory-lohit-345.git
+  188  git add .
+  189  git commit -m "initial Azure deploy"
+  190  git push azure master
+  191  git init
+  192  git remote add azure https://flaskinventory-lohit-345-f0hph5gph4e4fehb.scm.northeurope-01.azurewebsites.net:443/flaskinventory-lohit-345.git
+  193  git add .
+  194  git commit -m "initial Azure deploy"
+  195  git push azure master
+  196  git config --global user.name "Lohit"
+  197  git config --global user.email "cartesian45@gmail.com"
+  198  git add .
+  199  git commit -m "initial Azure deploy"
+  200  git push azure master
+  201  git push azure master
+  202  exit()
+  203  cd Desktop
+  204  cd flask_project
+  205  git add .
+  206  git commit -m "Added gunicorn and startup fix"
+  207  git push azure master
+  208  python --version
+  209  venv source/Scripts/activate
+  210  pwd
+  211  source venv/Scripts/activate
+  212  python app.py
+  213  flask run
+  214  flask run
+  215  cd Desktop
+  216  mkdir AZDB
+  217  cd AZDB
+  218  git init
+  219  mkdir app
+  220  cd app
+  221  touch __init__.py routes.py models.py
+  222  mkdir templates static
+  223  touch static/custom.css
+  224  cd ..
+  225  touch run.py config.py requirements.txt .gitignore README.md
+  226  python -m venv venv
+  227  source venve/Scripts/activate
+  228  source venv/Scripts/activate
+  229  pip install flask flask_sqlalchemy psycopg2-binary
+  230  pip freeze > requirements.txt
+  231  git add .
+  232  git commit -m "Initial sacffold: AZDB project with flask+postgresql config"
+  233  git braanh -M main
+  234  git branch -M main
+  235  git remote add origin https://github.com/SAILOHITC96/AZURE-DBMS-PROJECT-2025.git
+  236  git push -u origin main
+  237  git push -u origin main
+  238  git remote add origin https://github.com/SAILOHITC96/AZURE-DBMS-PROJECT-2025.git
+  239  git push -u origin main
+  240  git pull origin main --allow-unrelated-histories
+  241  git push -u origin main
+  242  psql -U postgres
+  243  python
+  244  pwd
+  245  cd Desktop
+  246  cd AZDB
+  247  source venv/Scripts/activate
+  248  python
+  249  flask run
+  250  cd Desktop
+  251  cd flask_project
+  252  source venv/Scripts/activate
+  253  flask run
+  254  psql -U postgres -h localhost -p 5432
+  255  source venv/Scripts/activate
+  256  $ export FLASK_APP=app.py
+  257  $ export FLASK_ENV=development
+  258  $ flask run
+  259  export FLASK_APP=app.py
+  260  export FLASK_ENV=development
+  261  flas run
+  262  flask run
+  263  cd Desktop
+  264  cd flask_project
+  265  source venv/Script/activate
+  266  source venv/Scripts/activate
+  267  export FLASK_APP=app.py
+  268  export FLASK_ENV=development
+  269  flask run
+  270  net start postgresql-x64-17
+  271  sc query type= service | findstr /I postgres
+  272  cd Desktop
+  273  cd flask_project
+  274  source vene*Scripts/activate
+  275  source venv/Scripts/activate
+  276  flask run
+  277  run flask
+  278  flask run
+  279  flask run
+  280  cd Desktop
+  281  cd flask_project
+  282  source venv/Scripts/activate
+  283  flask run
+  284  flask run
+  285  flask run
+  286  flask run
+  287  flask run
+  288  flask run
+  289  flask run
+  290  git init
+  291  git remote -v
+  292  git remote add origin https://github.com/SAILOHITC96/AZDB.git
+  293  git push -u origin master
+  294  flask run
+  295  cd Desktop
+  296  cd flask_project
+  297  source venve/Scripts/activate
+  298  source venv/Scripts/activate
+  299  flask run
+  300  cd Dektop
+  301  cd Desktop
+  302  cd flask_project
+  303  source venv/Scripts/activate
+  304  flask un
+  305  flask run
+  306  cd Desktop
+  307  cd IT-AZ
+  308  git init
+  309  git remote add origin https://github.com/SAILOHITC96/AZ-IT.git
+  310  touch .gitignore
+  311  nano .gitignore
+  312  touch {app,models,extensions,creat_tables}.py
+  313  mkdir static
+  314  mkdir templates
+  315  touch .gitignore
+  316  touch readme.md
+  317  mv creat_tables.py create_tables.py
+  318  python -m venv venv
+  319    source venv/Scripts/activate
+  320  nano requirements.txt
+  321  pip install -r requirements.txt
+  322  pwd
+  323  cd Desktop
+  324  cd IT-AZ
+  325  pwd
+  326  pwd
+  327  cd Desktop
+  328  cd IT-AZ
+  329  pwd
+  330  cd Desktop
+  331  cd IT-AZ
+  332  pwd
+  333  touch .bashrc_local
+  334  nano .bashrc_local
+  335  cd ~
+  336  nano .bashrc
+  337  source ~/.bashrc
+  338  savehistory
+  339  cd Desktop/IT-AZ
+  340  savehistory
+  341  nano .bashrc_local
+  342  nano .bashrc_local
+  343  cd ~/Desktop/IT-AZ
+  344  source ~/.bashrc
+  345  savehistory
+  346  cd ~/Desktop/IT-AZ
+  347  ls
+  348  pwd
+  349  git status
+  350  exit
+  351  nano ~/Desktop/IT-AZ/project_history_auto_master.log
+  352  cd Desktop
+  353  cd IT-AZ
+  354  savehistory
+  355  source ~/.bashrc
+  356  savehistory
+  357  nano .bashrc
+  358  nano ~/.bashrc
+  359  source ~/.bashrc
+  360  cd Desktop/IT-AZ
+  361  cd ..
+  362  cd IT-AZ
+  363  savehistory
+  364  cd Dektop/IT-AZ
+  365  cd Dektop
+  366  pwd
+  367  cd Desktop
+  368  cd Desktop/IT-AZ
+  369  cd IT-AZ
+  370  echo hello
+  371  cd Desktop
+  372  cd IT-AZ
+  373  echo hello pandsssssssssssssssssssssss
+  374  cd Desktop
+  375  cd IT-AZ
+  376  echo babu
+  377  savehistory
+  378  nano ~/Desktop/IT-AZ/.bashrc_local
+  379  cd Desktop
+  380  cd IT-AZ
+  381  git init
+  382  git add .
+  383  git commit -m "Added bashrc with automatic bash history saver,Hurrah"
+  384  git push origin master
+  385  cd Desktop/IT-AZ
+  386  touch static/style.css
+  387  pwd
+  388  touch templates/{base,hardware,licenses} .html
+  389  ls
+  390  cd static
+  391  ls
+  392  cd ..
+  393  cd templates
+  394  ls
+  395  mv base base.html
+  396  ls
+  397  base hardware hardware.html
+  398  mv hardware hardware.html
+  399  mv licenses licenses.html
+  400  ls
+  401  cd ..
+  402  cd templates
+  403  nano base.html
+  404  nano style.css
+  405  nano hardware.html
+  406  ls
+  407  nano licenses.html
+  408  savehistory
+  409  cd Desktop/IT-AZ/templates
+  410  touch login.html
+  411  cd Desktop/IT-AZ
+  412  source venv/Scripts/activate
+  413  flask run
+  414  flask run
+  415  cd Desktop/IT-AZ
+  416  source venv/Scripts/activate
+  417  flask run
+  418  flask run
+  419  flask run
+  420  flask run
+  421  flask run
+  422  git Desktop/IT-AZ
+  423  cd Desktop/IT-AZ
+  424  git add .
+  425  git commit -m "Initial dashboard layout+charts for harware page"
+  426  git push origin main
+  427  git push origin master
+  428  savehistory
