@@ -1,127 +1,225 @@
-<!-- templates/hardware.html -->
 {% extends "base.html" %}
-
 {% block content %}
-<div class="row">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="row g-0">
     <!-- Sidebar -->
-    <div class="col-md-3 sidebar bg-dark text-white p-3 rounded-3">
+    <div class="col-md-3 bg-dark text-white p-3 sidebar rounded-end-3">
         <!-- Logo + Username -->
-        <div class="d-flex align-items-center mb-4 p-2 bg-primary rounded-2">
+        <div class="d-flex align-items-center mb-4 p-2 bg-primary rounded-2 shadow-sm">
             <img src="{{ url_for('static', filename='draitnew.jpg') }}" alt="Logo" class="me-2" width="40" height="40">
             <div><strong>User:</strong> IT_Admin</div>
         </div>
 
-        <!-- Sidebar Buttons -->
-        <div class="nav flex-column">
+        <!-- Navigation -->
+        <div class="nav flex-column mb-4">
             <a href="/dashboard" class="btn btn-primary mb-2 active">🖥️ Hardware</a>
             <a href="/licenses" class="btn btn-outline-light mb-2">🎫 Licenses</a>
         </div>
 
-        <!-- Pie Chart #1 -->
-    <div class="mt-5">
-        <h6 class="text-center">Asset Status Overview</h6>
-        <div class="chart-placeholder mb-4">
-            <canvas id="statusPieChart"></canvas>
-        </div>
+        <!-- Pie Charts -->
+        <div>
+            <div class="chart-title">Asset Status Overview</div>
+            <div class="chart-placeholder">
+                <canvas id="statusPieChart"></canvas>
+            </div>
 
-        <!-- Pie Chart #2 -->
-        <h6 class="text-center">Commodity Distribution</h6>
-        <div class="chart-placeholder">
-            <canvas id="personalAssetChart"></canvas>
+            <div class="chart-title">Commodity Distribution</div>
+            <div class="chart-placeholder">
+                <canvas id="personalAssetChart"></canvas>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Main Content -->
     <div class="col-md-9 main-content">
-        <h1 class="mb-4">🖥️ Hardware Assets</h1>
+        <h4 class="mb-3">🖥️ Hardware Assets</h4>
 
         <!-- Filters -->
-        <div class="filters mb-3 d-flex gap-3 flex-wrap">
-            <select class="form-select w-auto">
-                <option selected>Status</option>
-                <option>🟢 Active</option>
-                <option>🔴 Faulty/Damaged</option>
-                <option>⚫ Offline</option>
-            </select>
-
-            <select class="form-select w-auto">
-                <option selected>Commodity</option>
-                <option>Laptop</option>
-                <option>Tab</option>
-                <option>Other</option>
-            </select>
-
-            <input type="text" class="form-control w-auto" placeholder="Emp ID">
+        <div class="row mb-3 g-2">
+            <div class="col-sm-4">
+                <input type="text" id="empSearch" class="form-control form-control-sm" placeholder="🔍 Emp ID">
+            </div>
+            <div class="col-sm-4">
+                <select id="statusFilter" class="form-select form-select-sm">
+                    <option selected>Status</option>
+                    <option>🟢 Active</option>
+                    <option>🔴 Faulty/Damaged</option>
+                    <option>⚫ Offline</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <select id="commodityFilter" class="form-select form-select-sm">
+                    <option selected>Commodity</option>
+                    <option>Laptop</option>
+                    <option>Tab</option>
+                    <option>Other</option>
+                </select>
+            </div>
         </div>
 
-        <!-- Assets Table -->
-        <table class="table table-hover table-bordered rounded-3 overflow-hidden">
-            <thead class="table-primary">
-                <tr>
-                    <th>Sl. No.</th>
-                    <th>Emp Name</th>
-                    <th>Commodity</th>
-                    <th>Brand & Model</th>
-                    <th>Qty</th>
-                    <th>Given Date</th>
-                    <th>Return/Update Date</th>
-                    <th>Status</th>
-                    <th>Emp ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example row -->
-                <tr>
-                    <td>1</td>
-                    <td>Lohit </td>
-                    <td>Laptop</td>
-                    <td>Acer Aspire 7</td>
-                    <td>1</td>
-                    <td>2025-03-01</td>
-                    <td>2025-09-01</td>
-                    <td>
-                        <span class="badge-status badge-green"></span>
-                    </td>
-                    <td>EMP001</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Table -->
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <div><h6 class="mb-0">Asset List</h6></div>
+    <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#assetModal">+ Add</button>
+</div>
 
-        <!-- Charts Section -->
-        <div class="chart-placeholder">
-            <canvas id="personalAssetChart"></canvas>
+<div class="table-container">
+    <table class="table table-hover table-bordered">
+        <thead class="table-primary">
+            <tr>
+                <th>Sl. No.</th>
+                <th>Emp Name</th>
+                <th>Commodity</th>
+                <th>Brand & Model</th>
+                <th>Qty</th>
+                <th>Given Date</th>
+                <th>Return/Update Date</th>
+                <th>Status</th>
+                <th>Emp ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    {% for asset in assets %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ asset.emp_name }}</td>
+        <td>{{ asset.commodity }}</td>
+        <td>{{ asset.brand_model }}</td>
+        <td>{{ asset.qty }}</td>
+        <td>{{ asset.given_date }}</td>
+        <td>{{ asset.return_update_date or '-' }}</td>
+        <td>
+            <span class="badge-status 
+                {% if asset.status == 'Active' %}badge-green
+                {% elif asset.status == 'Faulty/Damaged' %}badge-red
+                {% elif asset.status == 'Offline' %}badge-gray
+                {% endif %}">
+            </span>
+        </td>
+        <td>{{ asset.emp_id }}</td>
+        <td>
+            
+            <form action="{{ url_for('delete_asset', asset_id=asset.id) }}" method="POST" style="display:inline;">
+    <button type="submit" class="btn btn-sm btn-outline-danger">🗑️</button>
+</form>
+
+        </td>
+    </tr>
+    {% endfor %}
+
+        </tbody>
+    </table>
+	<!-- Add/Edit Asset Modal -->
+<div class="modal fade" id="assetModal" tabindex="-1" aria-labelledby="assetModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h6 class="modal-title" id="assetModalLabel">Asset Details</h6>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="assetForm" method="POST" action="{{ url_for('add_asset') }}">
+    <div class="mb-2">
+        <input type="text" name="emp_name" class="form-control form-control-sm" placeholder="Emp Name" required>
+    </div>
+    <div class="mb-2">
+        <input type="text" name="commodity" class="form-control form-control-sm" placeholder="Commodity" required>
+    </div>
+    <div class="mb-2">
+        <input type="text" name="brand_model" class="form-control form-control-sm" placeholder="Brand & Model">
+    </div>
+    <div class="mb-2">
+        <input type="number" name="qty" class="form-control form-control-sm" placeholder="Qty">
+    </div>
+    <div class="mb-2">
+        <input type="date" name="given_date" class="form-control form-control-sm" placeholder="Given Date">
+    </div>
+    <div class="mb-2">
+        <input type="date" name="return_update_date" class="form-control form-control-sm" placeholder="Return Date">
+    </div>
+    <div class="mb-2">
+        <select name="status" class="form-select form-select-sm">
+            <option selected disabled>Status</option>
+            <option value="Active">Active</option>
+            <option value="Faulty/Damaged">Faulty/Damaged</option>
+            <option value="Offline">Offline</option>
+        </select>
+    </div>
+    <div class="mb-2">
+        <input type="text" name="emp_id" class="form-control form-control-sm" placeholder="Emp ID">
+    </div>
+</form>
+
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="assetForm" class="btn btn-sm btn-primary">Save</button>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Chart.js Scripts -->
+</div>
+
+
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx1 = document.getElementById('statusPieChart').getContext('2d');
-    const statusPieChart = new Chart(ctx1, {
+    const statusLabels = {{ status_data.keys()|list|tojson }};
+    const statusValues = {{ status_data.values()|list|tojson }};
+
+    new Chart(document.getElementById('statusPieChart').getContext('2d'), {
         type: 'pie',
         data: {
-            labels: ['Active', 'Faulty/Damaged', 'Offline'],
+            labels: statusLabels,
             datasets: [{
-                data: [12, 5, 8],
-                backgroundColor: ['#28a745', '#dc3545', '#343a40']
+                data: statusValues,
+                backgroundColor: ['#28a745', '#dc3545', '#6c757d']  // green, red, gray
             }]
         },
-        options: { responsive: true }
-    });
-
-    const ctx2 = document.getElementById('personalAssetChart').getContext('2d');
-    const personalAssetChart = new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-            labels: ['Laptop', 'Monitor', 'Tablet'],
-            datasets: [{
-                data: [2, 1, 1],
-                backgroundColor: ['#8e44ad', '#3498db', '#e67e22']
-            }]
-        },
-        options: { responsive: true }
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: { font: { size: 10 } }
+                }
+            }
+        }
     });
 </script>
+<script>
+    const commodityLabels = {{ commodity_data.keys()|list|tojson }};
+    const commodityValues = {{ commodity_data.values()|list|tojson }};
+
+    new Chart(document.getElementById('personalAssetChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: commodityLabels,
+            datasets: [{
+                data: commodityValues,
+                backgroundColor: ['#8e44ad', '#3498db', '#e67e22', '#1abc9c', '#f39c12']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: { font: { size: 10 } }
+                }
+            }
+        }
+    });
+</script>
+
+
 {% endblock %}
