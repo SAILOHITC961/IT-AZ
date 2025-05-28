@@ -93,6 +93,52 @@ def dashboard():
                            commodity_data=commodity_data,
                            status_data=status_data)
 
+@app.route('/licenses')
+def licenses():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    licenses = License.query.order_by(License.id.desc()).all()
+
+    # Pie chart data
+    status_counts = db.session.query(License.status, func.count().label('count'))\
+                              .group_by(License.status).all()
+    brand_counts = db.session.query(License.license_brand, func.count().label('count'))\
+                             .group_by(License.license_brand).all()
+
+    status_data = {s[0]: s[1] for s in status_counts}
+    brand_data = {b[0]: b[1] for b in brand_counts}
+
+    return render_template('licenses.html',
+                           licenses=licenses,
+                           status_data=status_data,
+                           brand_data=brand_data)
+@app.route('/add_license', methods=['POST'])
+def add_license():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    license = License(
+        emp_id=request.form['emp_id'],
+        emp_name=request.form['emp_name'],
+        license_brand=request.form['license_brand'],
+        license_key=request.form['license_key'],
+        qty=int(request.form['qty']),
+        activated_date=datetime.strptime(request.form['activated_date'], '%Y-%m-%d') if request.form['activated_date'] else None,
+        expiry_date=datetime.strptime(request.form['expiry_date'], '%Y-%m-%d') if request.form['expiry_date'] else None,
+        status=request.form['status']
+    )
+    db.session.add(license)
+    db.session.commit()
+    return redirect(url_for('licenses'))
+
+@app.route('/delete_license/<int:license_id>', methods=['POST'])
+def delete_license(license_id):
+    license = License.query.get_or_404(license_id)
+    db.session.delete(license)
+    db.session.commit()
+    return redirect(url_for('licenses'))
+                           
 
 @app.route('/logout')
 def logout():

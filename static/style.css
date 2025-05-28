@@ -46,3 +46,19 @@
         padding: 0 10px;
     }
 }
+.table-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+/* Make table header sticky */
+.table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
