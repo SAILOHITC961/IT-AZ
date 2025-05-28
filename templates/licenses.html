@@ -43,10 +43,11 @@
             </div>
             <div class="col-sm-6">
                 <select id="statusFilter" class="form-select form-select-sm">
-                    <option selected>Status</option>
-                    <option>🟢 Active</option>
-                    <option>🔴 Expired</option>
-                </select>
+					<option value="all" selected>Status</option>
+					<option value="active">🟢 Active</option>
+					<option value="expired">🔴 Expired</option>
+				</select>
+
             </div>
         </div>
 
@@ -57,7 +58,7 @@
         </div>
 
         <div class="table-container">
-            <table class="table table-hover table-bordered">
+			<table class="table table-hover table-bordered scrollable-table">
                 <thead class="table-primary">
                     <tr>
                         <th>Sl. No.</th>
@@ -88,6 +89,7 @@
                             {% elif license.status == 'Expired' %}badge-red
                             {% endif %}">
                         </span>
+						<span class="d-none status-text">{{ license.status }}</span>
                     </td>
                     <td>{{ license.emp_id }}</td>
                     <td>
@@ -157,11 +159,10 @@
     const statusData = {{ status_data|tojson }};
     const statusLabels = Object.keys(statusData);
     const statusValues = Object.values(statusData);
-
     const statusColors = statusLabels.map(label => {
-        if (label === 'Active') return '#28a745';  // green
-        if (label === 'Expired') return '#dc3545'; // red
-        return '#6c757d';  // fallback
+        if (label === 'Active') return '#28a745';
+        if (label === 'Expired') return '#dc3545';
+        return '#6c757d';
     });
 
     new Chart(document.getElementById('statusPieChart').getContext('2d'), {
@@ -211,7 +212,32 @@
             }
         }
     });
-</script>
 
+    // Emp ID / Name Search
+    document.getElementById('empSearch').addEventListener('input', function () {
+        const query = this.value.toLowerCase().trim();
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const empId = row.cells[7]?.innerText.toLowerCase();
+            const empName = row.cells[1]?.innerText.toLowerCase();
+            row.style.display = (
+                empId.includes(query) || empName.includes(query)
+            ) ? '' : 'none';
+        });
+    });
+
+    // Status Filter
+document.getElementById('statusFilter').addEventListener('change', function () {
+    const selected = this.value;
+    const rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+        const status = row.querySelector('.status-text')?.textContent.toLowerCase().trim();
+        row.style.display = (selected === 'all' || status === selected) ? '' : 'none';
+    });
+});
+
+</script>
 
 {% endblock %}

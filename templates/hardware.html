@@ -45,18 +45,11 @@
                 <select id="statusFilter" class="form-select form-select-sm">
                     <option selected>Status</option>
                     <option>🟢 Active</option>
-                    <option>🔴 Faulty/Damaged</option>
+                    <option>🔴 Faulty</option>
                     <option>⚫ Offline</option>
                 </select>
             </div>
-            <div class="col-sm-4">
-                <select id="commodityFilter" class="form-select form-select-sm">
-                    <option selected>Commodity</option>
-                    <option>Laptop</option>
-                    <option>Tab</option>
-                    <option>Other</option>
-                </select>
-            </div>
+            
         </div>
 
         <!-- Table -->
@@ -93,13 +86,16 @@
         <td>{{ asset.given_date }}</td>
         <td>{{ asset.return_update_date or '-' }}</td>
         <td>
-            <span class="badge-status 
-                {% if asset.status == 'Active' %}badge-green
-                {% elif asset.status == 'Faulty/Damaged' %}badge-red
-                {% elif asset.status == 'Offline' %}badge-gray
-                {% endif %}">
-            </span>
-        </td>
+    <span class="badge-status 
+        {% if asset.status == 'Active' %}badge-green
+        {% elif asset.status == 'Faulty/Damaged' %}badge-red
+        {% elif asset.status == 'Offline' %}badge-gray
+        {% endif %}">
+		&nbsp;
+        {{ asset.status }}
+    </span>
+</td>
+
         <td>{{ asset.emp_id }}</td>
         <td>
             
@@ -145,7 +141,7 @@
         <select name="status" class="form-select form-select-sm">
             <option selected disabled>Status</option>
             <option value="Active">Active</option>
-            <option value="Faulty/Damaged">Faulty/Damaged</option>
+            <option value="Faulty">Faulty</option>
             <option value="Offline">Offline</option>
         </select>
     </div>
@@ -178,7 +174,7 @@
             labels: statusLabels,
             datasets: [{
                 data: statusValues,
-                backgroundColor: ['#28a745', '#dc3545', '#6c757d']  // green, red, gray
+                backgroundColor: ['#dc3545', '#28a745', '#6c757d']  // green, red, gray
             }]
         },
         options: {
@@ -220,6 +216,36 @@
         }
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const empSearch = document.getElementById('empSearch');
+        const statusFilter = document.getElementById('statusFilter');
+        const commodityFilter = document.getElementById('commodityFilter');
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        function filterRows() {
+            const empQuery = empSearch.value.toLowerCase();
+            const statusQuery = statusFilter.value;
+            
+            tableRows.forEach(row => {
+                const empId = row.cells[8].textContent.toLowerCase();
+                const status = row.cells[7].textContent.trim();
+                
+
+                const matchesEmp = empId.includes(empQuery);
+                const matchesStatus = (statusQuery === 'Status' || status.includes(statusQuery.replace(/🟢|🔴|⚫/g, '').trim()));
+                
+
+                row.style.display = (matchesEmp && matchesStatus ) ? '' : 'none';
+            });
+        }
+
+        empSearch.addEventListener('input', filterRows);
+        statusFilter.addEventListener('change', filterRows);
+        
+    });
+</script>
+
 
 
 {% endblock %}
