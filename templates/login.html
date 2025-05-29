@@ -1,4 +1,3 @@
-<!-- templates/login.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +13,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+       
+
+        .corner-logo-right {
+            position: absolute;
+            top: 00px;
+            right: 20px;
+            width: 170px;
+            height: auto;
         }
 
         .login-container {
@@ -23,6 +33,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 400px;
+            text-align: center;
         }
 
         .btn-primary {
@@ -37,6 +48,12 @@
 </head>
 
 <body>
+
+    
+
+    <!-- Azure Logo (Top Right Corner) -->
+    <img src="{{ url_for('static', filename='microsoftazure-featured.png') }}" alt="Azure Logo" class="corner-logo-right">
+
     <div class="login-container">
         <h3 class="mb-4 text-center">💼 IT Asset Manager Login</h3>
         <form method="POST" action="/login">
@@ -54,6 +71,7 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
+
 </body>
 
 </html>
