@@ -14879,3 +14879,504 @@
   502  cd IT-AZ
   503  source venv/Scripts/activate
   504  flask run
+======== AUTO SAVE Thu May 29 13:48:01 IST 2025 ========
+   20  flask run
+   21  flask run
+   22  flask run
+   23  flask run
+   24  flask run
+   25  git init
+   26  git remote -v
+   27  git remote add origin https://github.com/SAILOHITC96/AZDB.git
+   28  git push -u origin master
+   29  flask run
+   30  cd Desktop
+   31  cd flask_project
+   32  source venve/Scripts/activate
+   33  source venv/Scripts/activate
+   34  flask run
+   35  cd Dektop
+   36  cd Desktop
+   37  cd flask_project
+   38  source venv/Scripts/activate
+   39  flask un
+   40  flask run
+   41  cd Desktop
+   42  cd IT-AZ
+   43  git init
+   44  git remote add origin https://github.com/SAILOHITC96/AZ-IT.git
+   45  touch .gitignore
+   46  nano .gitignore
+   47  touch {app,models,extensions,creat_tables}.py
+   48  mkdir static
+   49  mkdir templates
+   50  touch .gitignore
+   51  touch readme.md
+   52  mv creat_tables.py create_tables.py
+   53  python -m venv venv
+   54    source venv/Scripts/activate
+   55  nano requirements.txt
+   56  pip install -r requirements.txt
+   57  pwd
+   58  cd Desktop
+   59  cd IT-AZ
+   60  pwd
+   61  pwd
+   62  cd Desktop
+   63  cd IT-AZ
+   64  pwd
+   65  cd Desktop
+   66  cd IT-AZ
+   67  pwd
+   68  touch .bashrc_local
+   69  nano .bashrc_local
+   70  cd ~
+   71  nano .bashrc
+   72  source ~/.bashrc
+   73  savehistory
+   74  cd Desktop/IT-AZ
+   75  savehistory
+   76  nano .bashrc_local
+   77  nano .bashrc_local
+   78  cd ~/Desktop/IT-AZ
+   79  source ~/.bashrc
+   80  savehistory
+   81  cd ~/Desktop/IT-AZ
+   82  ls
+   83  pwd
+   84  git status
+   85  exit
+   86  nano ~/Desktop/IT-AZ/project_history_auto_master.log
+   87  cd Desktop
+   88  cd IT-AZ
+   89  savehistory
+   90  source ~/.bashrc
+   91  savehistory
+   92  nano .bashrc
+   93  nano ~/.bashrc
+   94  source ~/.bashrc
+   95  cd Desktop/IT-AZ
+   96  cd ..
+   97  cd IT-AZ
+   98  savehistory
+   99  cd Dektop/IT-AZ
+  100  cd Dektop
+  101  pwd
+  102  cd Desktop
+  103  cd Desktop/IT-AZ
+  104  cd IT-AZ
+  105  echo hello
+  106  cd Desktop
+  107  cd IT-AZ
+  108  echo hello pandsssssssssssssssssssssss
+  109  cd Desktop
+  110  cd IT-AZ
+  111  echo babu
+  112  savehistory
+  113  nano ~/Desktop/IT-AZ/.bashrc_local
+  114  cd Desktop
+  115  cd IT-AZ
+  116  git init
+  117  git add .
+  118  git commit -m "Added bashrc with automatic bash history saver,Hurrah"
+  119  git push origin master
+  120  cd Desktop/IT-AZ
+  121  touch static/style.css
+  122  pwd
+  123  touch templates/{base,hardware,licenses} .html
+  124  ls
+  125  cd static
+  126  ls
+  127  cd ..
+  128  cd templates
+  129  ls
+  130  mv base base.html
+  131  ls
+  132  base hardware hardware.html
+  133  mv hardware hardware.html
+  134  mv licenses licenses.html
+  135  ls
+  136  cd ..
+  137  cd templates
+  138  nano base.html
+  139  nano style.css
+  140  nano hardware.html
+  141  ls
+  142  nano licenses.html
+  143  savehistory
+  144  cd Desktop/IT-AZ/templates
+  145  touch login.html
+  146  cd Desktop/IT-AZ
+  147  source venv/Scripts/activate
+  148  flask run
+  149  flask run
+  150  cd Desktop/IT-AZ
+  151  source venv/Scripts/activate
+  152  flask run
+  153  flask run
+  154  flask run
+  155  flask run
+  156  flask run
+  157  git Desktop/IT-AZ
+  158  cd Desktop/IT-AZ
+  159  git add .
+  160  git commit -m "Initial dashboard layout+charts for harware page"
+  161  git push origin main
+  162  git push origin master
+  163  savehistory
+  164  terraform version
+  165  terraform version
+  166  terraform version
+  167  terraform version
+  168  az version
+  169  az login
+  170  az account show
+  171  terraform providers
+  172  terraform version
+  173  terraform providers
+  174  cd ~/Desktop/TERRAFORM
+  175  terraform init
+  176  terraform init
+  177  terraform providers
+  178  cd Desktop/bot
+  179  python loh_clone.py
+  180  nano loh_clone.py
+  181  python loh_clone.py
+  182  pip install openai azure-cognitiveservices-speech python-telegram-bot
+  183  python loh_clone.py
+  184  nano loh_clone.py
+  185  python loh_clone.py
+  186  clear
+  187  ls
+  188  nano loh_clone.py
+  189  clear
+  190  pwd
+  191  ls
+  192  nano loh_clone.py
+  193  python loh_clone.py
+  194  nano loh_clone.py
+  195  clear
+  196  pwd
+  197  ls
+  198  mv loh_clone.py
+  199  rm loh_clone.py
+  200  ls
+  201  nano loh_clone.py
+  202  python loh_clone.py
+  203  nano loh_clone.py
+  204  python loh_clone.py
+  205  rm loh_clone.py
+  206  pip uninstall python-telegram-bot openai -y
+  207  pwd
+  208  cd Desktop/IT-AZ
+  209  flask run
+  210  source venv/Scripts/activate
+  211  flask run
+  212  exit
+  213  pwd
+  214  cd Desktop
+  215  cd AZ-IT
+  216  cd IT-AZ
+  217  venv source/Activate
+  218  source venv/Scripts/activate
+  219  flask run
+  220  az logout
+  221  az login
+  222  az account show
+  223  git --version
+  224  git clone https://github.com/SAILOHITC961/advanced-terraform-3099246.git
+  225  ssh -T git@github.com
+  226  git config --global user.email
+  227  git config --global user.name "CHINTALAPUDI SRI SAI LOHIT"
+  228  git config --global user.email "1da23cs041.cs@drait.edu.in"
+  229  git config --global --list
+  230  git credential-manager clear
+  231  git credential-manager erase
+  232  git credential-manager erase
+  233  git clear
+  234  clear git
+  235  clear
+  236  git push origin main
+  237  pwd
+  238  mkdir hero
+  239  cd hero
+  240  pwd
+  241  git push origin main
+  242  git init
+  243  git remote add origin https://github.com/SAILOHITC961/hero.git
+  244  echo "# Hero Repo" > README.md
+  245  git add .
+  246  git commit -m "Initial commit"
+  247  git branch -M main
+  248  git push -u origin main
+  249  git status
+  250  git log
+  251  ls
+  252  cd hero
+  253  ls
+  254  git clone https://github.com/SAILOHITC961/advanced-terraform-3099246.git
+  255  git config --global user.email
+  256  cd advanced-terraform-3099246
+  257  git remote -v
+  258  ls
+  259  cd ..
+  260  pwd
+  261  ls
+  262  cd advanced-terraform-3099246/
+  263  ls
+  264  clear
+  265  pwd
+  266  cd Desktop
+  267  cd IT-AZ
+  268  source venv/Scripts/activate
+  269  flask run
+  270  git init
+  271  git add .
+  272  git add .
+  273  git commit -m "Initial project commit with working login and templates"
+  274  git remote add origin https://github.com/SAILOHITC961/IT-AZ.git
+  275  git push -u origin master
+  276  git remote remove origin
+  277  git remote add origin https://github.com/SAILOHITC961/IT-AZ.git
+  278  git push -u origin master
+  279  pwd
+  280  cd Desktop
+  281  cd IT-AZ
+  282  source venv/Scripts/activate
+  283  flask run
+  284  pwd
+  285  cd Desktop
+  286  cd IT-AZ
+  287  source venv/Scripts/activate
+  288  flask run
+  289  flask run
+  290  pwd
+  291  cd Desktop
+  292  cd IT AZ
+  293  cd IT-AZ
+  294  source venv/Scripts/activate
+  295  flask run
+  296  rm -rf "/c/Program Files/PostgreSQL/17/data"
+  297  pwd
+  298  cd Desktop
+  299  cd IT-AZ
+  300  python
+  301  source venv/Scripts/activate
+  302  pip install flask flask_sqlalchemy psycopg2
+  303  python
+  304  flask run
+  305  flask run
+  306  flask run
+  307  pwd
+  308  flask run
+  309  pip install flask flask_sqlalchemy psycopg2
+  310  flask run
+  311  flask run
+  312  flask run
+  313  flask run
+  314  flask run
+  315  pwd
+  316  cd Desktop
+  317  cd IT-AZ
+  318  source venv/Scripts/activate
+  319  flask run
+  320  flask run
+  321  flask run
+  322  pwd
+  323  cd Desktop
+  324  cd IT-AZ
+  325  source venv/Scripts/activate
+  326  flask run
+  327  flask run
+  328  pwd
+  329  cd Desktop
+  330  cd IT-AZ
+  331  source venv/Scripts/activate
+  332  flask run
+  333  cd Desktop
+  334  cd IT-AZ
+  335  source venv/Scripts/Activate
+  336  flask run
+  337  flask run
+  338  flask run
+  339  flask run
+  340  flask run
+  341  flask run
+  342  flask run
+  343  flask run
+  344  flask run
+  345  flask run
+  346  flask run
+  347  flask run
+  348  flask run
+  349  [200~psql -U postgres
+  350  psql -U postgres
+  351  psql --version
+  352  psql -U postgres
+  353  psql --version
+  354  psql -U postgres
+  355  psql -U postgres
+  356  psql -U postgres -d flask
+  357  pwd
+  358  cd Desktop
+  359  cd IT-AZ
+  360  sorce venv/Scripts/activate
+  361  source venv/Scripts/activate
+  362  flask run
+  363  flask run
+  364  flask run
+  365  flask run
+  366  cd Desktop
+  367  cd IT-AZ
+  368  source venv/Scripts/activate
+  369  flask run
+  370  flask run
+  371  \c flask
+  372  psql --version
+  373  psql -U postgres
+  374  flask run
+  375  psql -U postgres
+  376  flask run
+  377  psql -U postgres
+  378  flask run
+  379  flask run
+  380  flask run
+  381  flask run
+  382  flask run
+  383  psql -U postgres
+  384  flask run
+  385  git init
+  386  git add .
+  387  git commit -m "Initial commit - working asset dashboard with charts"
+  388  git push -u origin master
+  389  git commit -m "Again"
+  390  git push
+  391  cd Desktop
+  392  cd IT-AZ
+  393  source venv/SCripts/activate
+  394  flask run
+  395  flask run
+  396  flask run
+  397  flask run
+  398  flask run
+  399  cd Desktop
+  400  cd IT-AZ
+  401  source venv/Scripts/activate
+  402  flask run
+  403  cd Desktop
+  404  cd IT-AZ
+  405  source venv/Scripts/activate
+  406  flask run
+  407  flask run
+  408  flask run
+  409  psql -U postgres
+  410  clear
+  411  cd Desktop
+  412  cd IT-AZ
+  413  source venv/Scripts/activate
+  414  flask run
+  415  psql -U postgres
+  416  flas ru
+  417  flask run
+  418  psql -U postgres
+  419  flask run
+  420  flask run
+  421  psql -U postgres
+  422  flask run
+  423  flask run
+  424  cd Desktop
+  425  cd IT-AZ
+  426  source venv/Scripts/activate
+  427  flask run
+  428  cd Desktop
+  429  cd IT-AZ
+  430  source venv/Scripts/activate
+  431  flask run
+  432  cd Desktop
+  433  cd IT-AZ
+  434  source venv/Scripts/activate
+  435  flask run
+  436  git init
+  437  git add .
+  438  git add .
+  439  git commit -m "licenses fixed+scroll bar added"
+  440  git branch -M main
+  441  git push -u origin main
+  442  git push origin master
+  443  git push origin master --force
+  444  git push -u origin main
+  445  git push -M main
+  446  git branch -M main
+  447  git push -u origin main --force
+  448  git branch -M master
+  449  git push -u origin master --force
+  450  git push origin --delete main
+  451  git push origin --delete main
+  452  flask run
+  453  cd Desktop
+  454  cd IT-AZ
+  455  git init
+  456  git add .
+  457  git branch -M main
+  458  git push -u origin main --force
+  459  git branch -M master
+  460  git push -u origin master --force
+  461  ls
+  462  cd templates
+  463  cd ..
+  464  pwd
+  465  git status
+  466  git add templates/hardware.html
+  467  git commit -m "update"
+  468  FLASK RUN
+  469  flask run
+  470  source venv/Scripts/activate
+  471  flask run
+  472  flask run
+  473  flask run
+  474  flask run
+  475  flask run
+  476  flask run
+  477  flask run
+  478  flask run
+  479  flask run
+  480  flask run
+  481  flask run
+  482  flask run
+  483  flask run
+  484  flask run
+  485  git init
+  486  git push origin main
+  487  git push -u origin master
+  488  git push -u origin main
+  489  clear
+  490  pwd
+  491  git init
+  492  git add .
+  493  git commit -m "fixed scroll and filters"
+  494  git push -u origin master
+  495  git push -u origin main
+  496  git push
+  497  cd Desktop
+  498  cd IT-AZ
+  499  source venv/Scripts/activate
+  500  flask run
+  501  cd Desktop
+  502  cd IT-AZ
+  503  source venv/Scripts/activate
+  504  flask run
+  505  flask run
+  506  flask run
+  507  psql -U postgres
+  508  flask run
+  509  psql -U postgres
+  510  flask run
+  511  flask run
+  512  flask run
+  513  git init
+  514  git add .
+  515  git push
+  516  git commit -m "licenses edit+scroll bar"
+  517  git push origin main
+  518  git push origin master
+  519  flask run

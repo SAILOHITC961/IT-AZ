@@ -171,6 +171,25 @@ def delete_license(license_id):
     db.session.commit()
     return redirect(url_for('licenses'))
                            
+@app.route("/update_asset/<int:id>", methods=["POST"])
+def update_asset(id):
+    asset = Asset.query.get_or_404(id)
+
+    asset.emp_name = request.form["emp_name"]
+    asset.commodity = request.form["commodity"]
+    asset.brand_model = request.form["brand_model"]
+    asset.qty = int(request.form["qty"]) if request.form["qty"] else 1
+
+    given_date = request.form.get("given_date")
+    return_update_date = request.form.get("return_update_date")
+    asset.given_date = datetime.strptime(given_date, "%Y-%m-%d") if given_date else None
+    asset.return_update_date = datetime.strptime(return_update_date, "%Y-%m-%d") if return_update_date else None
+
+    asset.status = request.form["status"]
+    asset.emp_id = request.form["emp_id"]
+
+    db.session.commit()
+    return redirect(url_for("dashboard"))
 
 @app.route('/logout')
 def logout():

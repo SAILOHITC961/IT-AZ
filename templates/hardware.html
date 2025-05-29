@@ -103,7 +103,21 @@
     <button type="submit" class="btn btn-sm btn-outline-danger">🗑️</button>
 </form>
 
-        </td>
+        <button 
+        class="btn btn-sm btn-outline-primary ms-1 edit-btn"
+        data-bs-toggle="modal"
+        data-bs-target="#editAssetModal"
+        data-id="{{ asset.id }}"
+        data-emp_name="{{ asset.emp_name }}"
+        data-commodity="{{ asset.commodity }}"
+        data-brand_model="{{ asset.brand_model }}"
+        data-qty="{{ asset.qty }}"
+        data-given_date="{{ asset.given_date }}"
+        data-return_update_date="{{ asset.return_update_date }}"
+        data-status="{{ asset.status }}"
+        data-emp_id="{{ asset.emp_id }}"
+    >✏️</button>
+</td>
     </tr>
     {% endfor %}
 
@@ -159,6 +173,55 @@
     </div>
 </div>
 
+</div>
+<!-- Edit Asset Modal -->
+<div class="modal fade" id="editAssetModal" tabindex="-1" aria-labelledby="editAssetModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h6 class="modal-title" id="editAssetModalLabel">Edit Asset</h6>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editAssetForm" method="POST">
+				
+                    <input type="hidden" name="id" id="edit-id">
+                    <div class="mb-2">
+                        <input type="text" name="emp_name" id="edit-emp_name" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" name="commodity" id="edit-commodity" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" name="brand_model" id="edit-brand_model" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-2">
+                        <input type="number" name="qty" id="edit-qty" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-2">
+                        <input type="date" name="given_date" id="edit-given_date" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-2">
+                        <input type="date" name="return_update_date" id="edit-return_update_date" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-2">
+                        <select name="status" id="edit-status" class="form-select form-select-sm">
+                            <option value="Active">Active</option>
+                            <option value="Faulty/Damaged">Faulty/Damaged</option>
+                            <option value="Offline">Offline</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" name="emp_id" id="edit-emp_id" class="form-control form-control-sm">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="editAssetForm" class="btn btn-sm btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -245,6 +308,45 @@
         
     });
 </script>
+<script>
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = document.getElementById('editAssetModal');
+            document.getElementById('edit-id').value = button.dataset.id;
+            document.getElementById('edit-emp_name').value = button.dataset.emp_name;
+            document.getElementById('edit-commodity').value = button.dataset.commodity;
+            document.getElementById('edit-brand_model').value = button.dataset.brand_model;
+            document.getElementById('edit-qty').value = button.dataset.qty;
+            document.getElementById('edit-given_date').value = button.dataset.given_date;
+            document.getElementById('edit-return_update_date').value = button.dataset.return_update_date || '';
+            document.getElementById('edit-status').value = button.dataset.status;
+            document.getElementById('edit-emp_id').value = button.dataset.emp_id;
+
+            // Set form action dynamically
+            document.getElementById('editAssetForm').action = `/update_asset/${button.dataset.id}`;
+        });
+    });
+</script>
+<script>
+document.querySelectorAll('.edit-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.getElementById('editAssetModal');
+        document.getElementById('edit-id').value = button.dataset.id;
+        document.getElementById('edit-emp_name').value = button.dataset.emp_name;
+        document.getElementById('edit-commodity').value = button.dataset.commodity;
+        document.getElementById('edit-brand_model').value = button.dataset.brand_model;
+        document.getElementById('edit-qty').value = button.dataset.qty;
+        document.getElementById('edit-given_date').value = button.dataset.given_date;
+        document.getElementById('edit-return_update_date').value = button.dataset.return_update_date;
+        document.getElementById('edit-status').value = button.dataset.status;
+        document.getElementById('edit-emp_id').value = button.dataset.emp_id;
+
+        const form = document.getElementById('editAssetForm');
+        form.action = `/update_asset/${button.dataset.id}`;
+    });
+});
+</script>
+
 
 
 
