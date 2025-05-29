@@ -114,23 +114,55 @@ def licenses():
                            status_data=status_data,
                            brand_data=brand_data)
 @app.route('/add_license', methods=['POST'])
+
 def add_license():
     if 'user' not in session:
         return redirect(url_for('login'))
 
-    license = License(
-        emp_id=request.form['emp_id'],
-        emp_name=request.form['emp_name'],
-        license_brand=request.form['license_brand'],
-        license_key=request.form['license_key'],
-        qty=int(request.form['qty']),
-        activated_date=datetime.strptime(request.form['activated_date'], '%Y-%m-%d') if request.form['activated_date'] else None,
-        expiry_date=datetime.strptime(request.form['expiry_date'], '%Y-%m-%d') if request.form['expiry_date'] else None,
-        status=request.form['status']
-    )
-    db.session.add(license)
+    try:
+        emp_name = request.form['emp_name']
+        license_brand = request.form['license_brand']
+        qty = int(request.form['qty']) if request.form['qty'] else 1
+        activated_date = request.form['activated_date']
+        expiry_date = request.form['expiry_date']
+        status = request.form['status']
+        emp_id = request.form['emp_id']
+
+        # Convert date strings to actual datetime.date objects
+        activated_date = datetime.strptime(activated_date, '%Y-%m-%d').date() if activated_date else None
+        expiry_date = datetime.strptime(expiry_date, '%Y-%m-%d').date() if expiry_date else None
+
+        new_license = License(
+            emp_name=emp_name,
+            license_brand=license_brand,
+            qty=qty,
+            activated_date=activated_date,
+            expiry_date=expiry_date,
+            status=status,
+            emp_id=emp_id
+        )
+
+        db.session.add(new_license)
+        db.session.commit()
+        return redirect(url_for('licenses'))
+
+    except Exception as e:
+        print("Error while adding license:", e)
+        return "Bad Request", 400
+
+@app.route("/update_license/<int:id>", methods=["POST"])
+def update_license(id):
+    license = License.query.get_or_404(id)
+    license.emp_name = request.form["emp_name"]
+    license.license_brand = request.form["license_brand"]
+    license.qty = request.form["qty"]
+    license.activated_date = request.form["activated_date"]
+    license.expiry_date = request.form["expiry_date"]
+    license.status = request.form["status"]
+    license.emp_id = request.form["emp_id"]
+
     db.session.commit()
-    return redirect(url_for('licenses'))
+    return redirect("/licenses")
 
 @app.route('/delete_license/<int:license_id>', methods=['POST'])
 def delete_license(license_id):
