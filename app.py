@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'supersecretkey')
 
 # ✅ Add your PostgreSQL database config here
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:root@localhost:5432/flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin1:password%40123@flaskdb.postgres.database.azure.com:5432/flaskdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
